@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import"./chunk-X2SEQXRR.mjs";var r=[{path:"",loadChildren:()=>import("./chunk-2NRGHHQA.mjs").then(e=>e.routes),\u0275entryName:"src/app/pages/portal/home/home.routes.ts"},{path:"me",loadChildren:()=>import("./chunk-XHZ5EWWQ.mjs").then(e=>e.routes),\u0275entryName:"src/app/pages/portal/about/about.routes.ts"},{path:"skills",loadChildren:()=>import("./chunk-AYP57FOU.mjs").then(e=>e.routes),\u0275entryName:"src/app/pages/portal/skill/skill.routes.ts"}];export{r as routes};
