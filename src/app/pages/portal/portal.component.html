@@ -1,0 +1,54 @@
+
+<div>
+    <div class="flex justify-between px-20 py-4" >
+        <div>
+            <a routerLink="/" >
+                <img height="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="logo">
+            </a>
+        </div>
+        <div class="flex gap-10 justify-between" >
+            @for (url of navUrls(); track $index) {
+
+                <a  class="text-black no-underline group " [routerLink]="[url.redirect]" routerLinkActive="link-active"  >
+                    <div class="group-hover:text-red-500" >
+                        {{url.label}}
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+    <div>
+        <router-outlet />
+    </div>
+    <div class="pt-10 pb-5 px-20  flex flex-col gap-10 "   >
+        <!--
+        <div class="w-full flex items-center justify-center"   >
+            <div style="flex: 0 1 600px;" >
+                <div class="flex gap-10 justify-center gap-10" >
+                    @for (url of navUrls(); track $index) {
+
+                        <a  class="text-black no-underline group " [routerLink]="[url.redirect]" routerLinkActive="link-active"  >
+                            <div class="group-hover:text-red-500" >
+                                {{url.label}}
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+        -->
+        <mat-divider class= "border-slate-200 " >
+        </mat-divider>
+        <div class="flex justify-between items-center" >
+            <div>&copy; 2025 Horizon - All rigth reserved</div>
+            <div class="flex gap-2" >
+                <a >
+                    <img src="/icon/linkedin.svg" width="40px"    alt="linkedin">
+                </a>
+                <a >
+                    <img src="/technologies/github.svg" width="40px" alt="Github">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
