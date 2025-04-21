@@ -13,43 +13,43 @@ export class HomeComponent  {
 
   technologies = signal<{ url: string, alt: string }[]>([
     {
-      url: '/technologies/java.svg',
+      url: 'technologies/java.svg',
       alt: 'Java'
     },
     {
-      url: '/technologies/spring.svg',
+      url: 'technologies/spring.svg',
       alt: 'Spring framework'
     },
     {
-      url: '/technologies/quarkus.svg',
+      url: 'technologies/quarkus.svg',
       alt: "Quarkus"
     },
     {
-      url: '/technologies/go.svg',
+      url: 'technologies/go.svg',
       alt: 'Golang'
     },
     {
-      url: '/technologies/angular.svg',
+      url: 'technologies/angular.svg',
       alt: 'Angular'
     },
     {
-      url: '/technologies/tailwind.svg',
+      url: 'technologies/tailwind.svg',
       alt: 'Tailwind'
     },
     {
-      url: '/technologies/github.svg',
+      url: 'technologies/github.svg',
       alt: 'Github'
     },
     {
-      url: '/technologies/gitlab.svg',
+      url: 'technologies/gitlab.svg',
       alt: 'Gitlab'
     },
     {
-      url: '/technologies/trello.svg',
+      url: 'technologies/trello.svg',
       alt: 'Trello'
     },
     {
-      url: '/technologies/slack.svg',
+      url: 'technologies/slack.svg',
       alt: 'Slack'
     }
   ])
