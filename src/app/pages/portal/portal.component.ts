@@ -19,10 +19,6 @@ export class PortalComponent  {
     {
       label: 'About me',
       redirect: '/me'
-    },
-    {
-      label: 'Projects',
-      redirect: '#'
     }
   ])
   

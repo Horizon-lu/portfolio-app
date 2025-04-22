@@ -1,192 +1,40 @@
 <div style="min-height: 80vh;" class="flex items-center justify-center">
-    <div class=" flex-1 max-w-screen-md w-full h-full flex flex-col items-center justify-center ">
-        <h3 class="text-xl font-extralight text-center text-secondary">My technical skills </h3>
-        <div class=" grid gap-x-4 gap-y-6 justify-center items-center w-full pt-10 min-h-80 grid-cols-6">
-            @for (item of technologies(); track $index) {
-            <div class="flex justify-center items-center p-2 rounded-lg mx-2  "
-                [ngClass]="{'bg-blue-300': view() === item.alt}">
-                <div (click)="view.set(item.alt)"
-                    class="shadow-md bg-white rounded-md inline-block p-2 cursor-pointer hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">
-                    <img class="w-12 h-12 md:w-14 md:h-14" [src]="item.url" [alt]="item.alt">
+    <div class="flex-1" >
+        <div class=" max-w-screen-md w-full h-full flex flex-col items-center justify-center ">
+            <h3 class="text-xl font-extralight text-center text-secondary">My technical skills </h3>
+            <div class=" grid gap-x-4 gap-y-6 justify-center items-center w-full pt-10 min-h-80 grid-cols-6">
+                @for (item of technologies(); track $index) {
+                <div class="flex justify-center items-center p-2 rounded-lg mx-2  "
+                    [ngClass]="view() === item.name ? item.bgColor : ''">
+                    <div (click)="view.set(item.name)"
+                        class="shadow-md bg-white rounded-md inline-block p-2 cursor-pointer hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <img class="w-12 h-12 md:w-14 md:h-14" [src]="item.url" [alt]="item.name">
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="flex-1 flex justify-center " >
+        @for (technology of technologies(); track $index) {
+            <div class="pb-2 rounded-xl max-w-screen-md animation-show  w-full shadow-lg" 
+                [ngClass]="[technology.bgColor ]"  [class.hidden]="view() !== technology.name">
+                <div class="flex items-center px-4 pt-2 pb-2   gap-2 ">
+                    <img [src]="technology.url" width="30px" height="30px" alt="">
+                    <span [class]="technology.textColor" >{{technology.name}}</span>
+                </div>  
+                <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl  ">
+                    <p>{{technology.intro}}</p>
+                    @if (technology.items.length > 0) {
+                        <ul>
+                            @for (item of technology.items; track $index) {
+                                <li>{{item}}</li>
+                            }
+                        </ul>
+                    }
                 </div>
             </div>
-            }
-        </div>
+        }
     </div>
-    <div class="bg-purple-300 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[9].url" width="30px" height="30px" alt="">
-            <span class="text-purple-700">Slack</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Uso de Slack como herramienta principal de comunicación y trabajo en equipos de desarrollo:</p>
-        </div>
-    </div>
-
-    @if (false){
-    <div class="bg-blue-100 pb-2 rounded-xl max-w-screen-md shadow-lg ">
-        <div class="flex items-center px-4 pt-2 pb-2   gap-2 ">
-            <img [src]="technologies()[0].url" width="30px" height="30px" alt="">
-            <span>Java</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl  ">
-            <p>Estos son algunos de los conocimientos y herramientas más demandados en el entorno Java con los que tengo
-                experiencia:</p>
-            <ul>
-                <li>Programación orientada a objetos (POO)</li>
-                <li>Java 17 / Java 21</li>
-                <li>Spring Framework (Spring Boot, Spring MVC, Spring Data)</li>
-                <li>Hibernate / JPA</li>
-                <li>REST APIs (creación y consumo)</li>
-                <li>JUnit / Mockito (testing)</li>
-                <li>Maven / Gradle</li>
-                <li>Java Streams y colecciones</li>
-                <li>Programación reactiva (Reactor, WebFlux)</li>
-                <li>Integración con bases de datos (PostgreSQL, MySQL)</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-green-100 pb-2 rounded-xl max-w-screen-md shadow-lg ">
-        <div class="flex items-center px-4 pt-2 pb-2   gap-2 ">
-            <img [src]="technologies()[1].url" width="30px" height="30px" alt="">
-            <span class="text-green-700">Spring boot</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl  ">
-            <p>Estos son algunos de los conocimientos y herramientas más demandados en el entorno Java con los que tengo
-                experiencia:</p>
-            <ul>
-                <li>Hibernate / JPA</li>
-                <li>Consultas complejas sea Jpql o Nativa</li>
-                <li>Manejo de Excepciones</li>
-                <li>REST APIs (creación y consumo)</li>
-                <li>JUnit / Mockito (testing)</li>
-                <li>Maven / Gradle</li>
-                <li>Programación reactiva (Reactor, WebFlux)</li>
-                <li>Comunicacion entre microservicios.</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-blue-100 pb-2 rounded-xl max-w-screen-md shadow-lg ">
-        <div class="flex items-center px-4 pt-2 pb-2   gap-2 ">
-            <img [src]="technologies()[2].url" width="30px" height="30px" alt="">
-            <span class="text-blue-700">Quarkus</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl  ">
-            <p>Experiencia con herramientas y conceptos clave en aplicaciones modernas usando Quarkus:</p>
-            <ul class="list-disc pl-5">
-                <li>Inyección de dependencias con CDI</li>
-                <li>Creación de REST APIs con JAX-RS</li>
-                <li>Persistencia con Panache (JPA)</li>
-                <li>Tareas programadas con `&#64;Scheduled`</li>
-                <li>Pruebas con `&#64;QuarkusTest` y `RestAssured`</li>
-                <li>Build nativo con GraalVM</li>
-                <li>Implementacion de CI/CD con gitlab y kubernetes </li>
-                <li>Microservicios y comunicación con REST/REST Client</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-sky-100 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[3].url" width="30px" height="30px" alt="">
-            <span class="text-sky-700">Golang</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Stack técnico con Go enfocado a rendimiento, despliegue continuo y mantenibilidad:</p>
-            <ul class="list-disc pl-5">
-                <li>APIs RESTful usando el framework Gin</li>
-                <li>Persistencia con GORM o Squirrel + pgx (según el caso)</li>
-                <li>Concurrencia con Goroutines y uso eficiente de recursos</li>
-                <li>Automatización de comandos y tareas con <code>task</code></li>
-                <li>Integración continua con GitLab CI/CD</li>
-                <li>Despliegue automatizado en la nube usando Kubernetes</li>
-                <li>Desarrollo en arquitectura hexagonal.</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-red-300 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[4].url" width="30px" height="30px" alt="">
-            <span class="text-red-700">Angular</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Conocimientos aplicados en el desarrollo de aplicaciones frontend modernas con Angular:</p>
-            <ul class="list-disc pl-5">
-                <li>Arquitectura modular y organización por capas (core, shared, features)</li>
-                <li>Uso de Signals, Computed y efecto reactivo para mejor rendimiento</li>
-                <li>Formularios reactivos con validaciones personalizadas</li>
-                <li>Consumo de APIs usando HttpClient y manejo centralizado de errores</li>
-                <li>Uso de servicios, inyección de dependencias y rutas protegidas</li>
-                <li>Componentes reutilizables y comunicación con &#64;Input() y &#64;Output()</li>
-                <li>Uso de PrimeNG / PrimeFlex para interfaz responsiva</li>
-                <li>Uso de otras librerias como material angular, Ng-zorro y tailwind</li>
-                <li>Lazy loading y performance optimization</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-cyan-100 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[5].url" width="30px" height="30px" alt="">
-            <span class="text-cyan-700">Tailwind CSS</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Uso práctico de Tailwind CSS para construir interfaces modernas, rápidas y responsivas:</p>
-            <ul class="list-disc pl-5">
-                <li>Diseño directo desde HTML con clases utilitarias</li>
-                <li>Diseños responsivos usando breakpoints personalizados</li>
-                <li>Estilos consistentes con `&#64;apply` y componentes reutilizables</li>
-                <li>Customización de temas desde el archivo <code>tailwind.config.js</code></li>
-                <li>Animaciones y transiciones suaves con utilidades integradas</li>
-                <li>Uso de Flex, Grid y tipografía adaptable</li>
-                <li>Integración con Angular y PrimeNG / PrimeFlex sin conflictos</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-slate-200 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[6].url" width="30px" height="30px" alt="">
-            <span class="text-gray-700">GitHub</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Uso profesional de GitHub para manejo de versiones, colaboración y despliegue continuo:</p>
-            <ul class="list-disc pl-5">
-                <li>Control de versiones con Git en entornos colaborativos</li>
-                <li>Uso de ramas y estrategias como <code>feature/</code>, <code>hotfix/</code>, <code>release/</code>
-                </li>
-                <li>Revisiones de código con Pull Requests y gestión de Issues</li>
-                <li>GitHub Actions para automatizar pruebas, builds y despliegues</li>
-                <li>GitHub Pages para documentaciones o demos públicas</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-orange-300 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[7].url" width="30px" height="30px" alt="">
-            <span class="text-orange-700">GitLab</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Experiencia en el uso de GitLab como plataforma de DevOps completa:</p>
-            <ul class="list-disc pl-5">
-                <li>Control de versiones y gestión de código en entornos privados</li>
-                <li>Pipeline de CI/CD automatizado con <code>.gitlab-ci.yml</code></li>
-                <li>Despliegue automático en clúster Kubernetes con nodos Spot</li>
-                <li>Uso de variables secretas y ambientes para staging/producción</li>
-                <li>Builds, tests y deploys configurados por proyecto</li>
-                <li>Monitoreo del pipeline desde Merge Requests</li>
-            </ul>
-        </div>
-    </div>
-    <div class="bg-blue-100 pb-2 rounded-xl max-w-screen-md shadow-lg">
-        <div class="flex items-center px-4 pt-2 pb-2 gap-2">
-            <img [src]="technologies()[8].url" width="30px" height="30px" alt="">
-            <span class="text-blue-700">Trello</span>
-        </div>
-        <div class="bg-white mx-2 px-4 overflow-hidden text-secondary leading-7 rounded-xl">
-            <p>Uso de Trello para organización de tareas, planificación de proyectos y seguimiento de avances:</p>
-            <ul class="list-disc pl-5">
-                <li>Tableros organizados por etapas del proyecto (To Do, Doing, Done)</li>
-                <li>Gestión de tareas por prioridad y fechas de entrega</li>
-                <li>Uso de etiquetas y checklists para claridad y seguimiento</li>
-            </ul>
-        </div>
-    </div>
-    }
+</div>
+  
