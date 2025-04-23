@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 export interface TechnologyCard {
   name: string;
   url: string;
@@ -15,7 +16,9 @@ export interface TechnologyCard {
   templateUrl: './technical-list.component.html',
   styleUrl: './technical-list.component.scss'
 })
-export class TechnicalListComponent {
+export class TechnicalListComponent  {
+
+  route = inject(ActivatedRoute);
 
 
   technologies = signal<TechnologyCard[]>([
@@ -105,7 +108,7 @@ export class TechnicalListComponent {
       ]
     },
     {
-      name: "Tailwind CSS",
+      name: "Tailwind",
       url: "technologies/tailwind.svg",
       bgColor: "bg-cyan-100",
       textColor: "text-cyan-700",
@@ -168,11 +171,19 @@ export class TechnicalListComponent {
       textColor: "text-purple-700",
       intro: "Use of Slack as the main communication and collaboration tool within development teams:",
       items: []
-    }    
+    }
   ]);
-  
+
   view = signal<string>(this.technologies()[0].name);
-  
-  
+
+  constructor(){
+    this.route.queryParams.subscribe({
+      next:( query : any) => {
+        if (query.technology){
+          this.view.set(query.technology)
+        }
+      }
+    })
+  }
 
 }

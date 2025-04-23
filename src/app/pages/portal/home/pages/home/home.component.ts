@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [MatButtonModule, MatDividerModule, MatIconModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
