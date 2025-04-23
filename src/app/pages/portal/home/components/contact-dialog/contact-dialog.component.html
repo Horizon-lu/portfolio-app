@@ -1,0 +1,27 @@
+<h2 mat-dialog-title class="text-center  ">Contact me </h2>
+<mat-dialog-content class="contact-content">
+  <div class="contact-method text-family" (click)="call()"  >
+    <mat-icon  class="text-blue-600" >phone</mat-icon>
+    <div class="text">
+      <p class="label">Call</p>
+      <p class="value">+51 958 766 379</p>
+    </div>
+  </div>
+  <div class="contact-method text-family" (click)="email()" >
+    <img src="icon/gmail-color.svg" width="28px" alt="Gmail icon">
+    <div class="text">
+      <p class="label">Email</p>
+      <p class="value">reymerretamozolopez&#64;gmail.com</p>
+    </div>
+  </div>
+  <div class="contact-method text-family" (click)="whatsapp()" >
+    <img src="icon/whatsapp.svg" width="28px" alt="Whatsapp icon">
+    <div class="text">
+      <p class="label">Whatsapp</p>
+      <p class="value">+51 958 766 379</p>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="primary">close</button>
+</mat-dialog-actions>

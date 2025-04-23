@@ -1,8 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { ContactDialogComponent } from '../../components/contact-dialog/contact-dialog.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -11,6 +13,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent  {
+
+  matDialog = inject(MatDialog);
 
   technologies = signal<{ url: string, alt: string }[]>([
     {
@@ -55,5 +59,15 @@ export class HomeComponent  {
     }
   ])
 
+  openContactDialog(){
+    this.matDialog.open(ContactDialogComponent, {
+      width: '350px',
+      height: 'auto',
+      panelClass: 'custom-dialog-container',
+      data: {
+        title: 'Contact me'
+      }
+    });
+  }
 
 }

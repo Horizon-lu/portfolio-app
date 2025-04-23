@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor : {
-        backDrop : 'rgba(0, 0, 0, 0.50)'
+        backDrop : 'rgba(0, 0, 0, 0.50)',
+        background: '#f6f6f6'
       },
       colors: {
         primary : '#bbdefb',

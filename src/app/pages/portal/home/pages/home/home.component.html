@@ -1,198 +1,200 @@
-<div class="flex px-20 cover-home items-center "  >
-    <div style="flex: 1 1 0%;" class="flex">
-        <div style="flex: 0 1 600px">
-            <div class="pt-10">
-                <div class="rounded-full bg-green-100 pl-2 pr-5 py-2 inline-block ">
-                    <div class="flex items-center ">
-                        <div style="width: 6px; height: 6px; border-radius: 50%; ; margin: 0 10px;"
-                            class="bg-green-700"></div>
-                        <span class="text-sm text-green-700">
-                            AVAILABLE FOR WORK
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="py-6">
-                <span class="text-8xl font-bold">Hi, I'm a Programer</span>
-            </div>
-            <div class="text-secondary text-base py-4 pb-2 ">
-                I have 3 years of experience working on developing modern web applications, handling both frontend and
-                backend tasks, and contributing to system integration and deployment processes.
-            </div>
-            <div class="pt-6">
-                <button mat-raised-button class="bg-black text-white "> <span class="text-family font-semibold">Contact
-                        me</span> </button>
-            </div>
-        </div>
-    </div>
-    <div style="flex: 1 1 0%;">
-        <div class="flex flex-col">
-            <div class="flex gap-3 ">
-                <div class="flex-1 bg-white rounded-2xl shadow-md"  >
-                    <div  class="px-8 py-6" >
-                        <div>
-                            <span class="text-lg font-semibold ">
-                                Reymer Nilton
+<div class="flex flex-col gap-8" >
+    <div class="flex px-20 cover-home items-center max-sm:px-4 max-sm:flex-col gap-10"  >
+        <div style="flex: 1 1 0%;" class="flex">
+            <div style="flex: 0 1 600px">
+                <div class="pt-10">
+                    <div class="rounded-full bg-green-100 pl-2 pr-5 py-2 inline-block ">
+                        <div class="flex items-center ">
+                            <div style="width: 6px; height: 6px; border-radius: 50%; ; margin: 0 10px;"
+                                class="bg-green-700 animate-pulse"></div>
+                            <span class="text-sm text-green-700">
+                                AVAILABLE FOR WORK
                             </span>
                         </div>
+                    </div>
+                </div>
+                <div class="py-6">
+                    <span class="text-8xl font-bold max max-sm:text-6xl ">Hi, I'm a Programer</span>
+                </div>
+                <div class="text-secondary text-base py-4 pb-2 ">
+                    I have 3 years of experience working on developing modern web applications, handling both frontend and
+                    backend tasks, and contributing to system integration and deployment processes.
+                </div>
+                <div class="pt-6">
+                    <button mat-raised-button class="bg-black text-white " (click)="openContactDialog()" > <span class="text-family font-semibold">Contact
+                            me</span> </button>
+                </div>
+            </div>
+        </div>
+        <div style="flex: 1 1 0%;">
+            <div class="flex flex-col">
+                <div class="flex gap-3 ">
+                    <div class="flex-1 bg-white rounded-2xl shadow-md py-2"  >
+                        <div  class="px-8 py-6 max-sm:px-2 " >
+                            <div>
+                                <span class="text-lg font-semibold ">
+                                    Reymer Nilton
+                                </span>
+                            </div>
+                            <div>
+                                <span class="text-secondary"> Ayacucho, Peru </span>
+                            </div>
+                        </div>
+                        <div class="text-center" >
+                            <img src="imgs/dev.svg" width="80%" alt="Desktop Image">
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white rounded-2xl shadow-md flex items-center">
+                        <img src="imgs/ronsoco.png" width="100%" alt="Desktop Image">
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-between gap-4 pt-10" >
+                @for (icon of technologies(); track $index) {
+                  <a [routerLink]="['/skills' ]"  [queryParams]="{'technology': icon.alt}"  >
+                    <div class="rounded-full p-3 bg-white shadow-sm   hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" >
+                        <img [src]="icon.url"  width="40px" height="40px" [alt]="icon.alt">
+                    </div>
+                  </a>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="px-20 max-sm:px-4 flex gap-20 max-sm:flex-col max-sm:gap-2 pt-24 " >
+        <div class="flex flex-col flex-1" >
+            <div>
+                <span class="text-4xl font-light" >
+                    Working experience
+                </span>
+            </div>
+            <div class="py-8 flex flex-col gap-4"  >
+                    <div class="flex gap-2 items-center" >
                         <div>
-                            <span class="text-secondary"> Ayacucho, Peru </span>
+                            <div class="p-2 bg-white rounded-md inline-block" >
+                                <img src="imgs/megafact.png" width="50px" height="50px" alt="Megafact">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2" >
+                            <div class="text-lg" >
+                                Frond-end and Back-end developer at <span class="font-semibold" >Megafact</span>
+                            </div>
+                            <div  >
+                                <span class="text-secondary text-sm" >2022 - 2024</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="text-center" >
-                        <img src="imgs/dev.svg" width="80%" alt="Desktop Image">
+                    <mat-divider class="border-slate-300" >
+                    </mat-divider>
+                    <div class="flex gap-2 items-center" >
+                        <div>
+                            <div class="p-2 bg-white rounded-md inline-block" >
+                                <img src="imgs/nivutech.jpg" width="50px" height="50px" alt="Megafact">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2" >
+                            <div class="text-lg" >
+                                Back-end developer at <span class="font-semibold" >Nivutech</span>
+                            </div>
+                            <div  >
+                                <span class="text-secondary text-sm" >2024 - 2025</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex-1 bg-white rounded-2xl shadow-md">
-                    <img src="imgs/ronsoco.png" width="100%" alt="Desktop Image">
-                </div>
             </div>
-            <div class="flex flex-wrap justify-between gap-4 pt-10" >
-            @for (icon of technologies(); track $index) {
-              <a [routerLink]="['/skills' ]"  [queryParams]="{'technology': icon.alt}"  >
-                <div class="rounded-full p-3 bg-white shadow-sm   hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out" >
-                    <img [src]="icon.url"  width="40px" height="40px" [alt]="icon.alt">
-                </div>
-              </a>
-            }
+        </div>
+        <div class="flex flex-col flex-1" >
+            <div>
+                <span class="text-4xl font-light" >
+                    Lates Work
+                </span>
             </div>
-        </div>
-    </div>
-</div>
-<div class="px-20 flex gap-20" >
-    <div class="flex flex-col flex-1" >
-        <div>
-            <span class="text-4xl font-light" >
-                Working experience
-            </span>
-        </div>
-        <div class="py-8 flex flex-col gap-4"  >
-                <div class="flex gap-2 items-center" >
-                    <div>
-                        <div class="p-2 bg-white rounded-md inline-block" >
-                            <img src="imgs/megafact.png" width="50px" height="50px" alt="Megafact">
+            <div class="py-8 flex flex-col gap-4"  >
+                    <div class="flex gap-2 items-center" >
+                        <div>
+                            <div class="p-4 bg-white rounded-md inline-block" >
+                               <mat-icon class="text-pink-500 text-3xl" >handshake</mat-icon>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex flex-col gap-2" >
-                        <div class="text-lg" >
-                            Frond-end and Back-end developer at <span class="font-semibold" >Megafact</span>
-                        </div>
-                        <div  >
-                            <span class="text-secondary text-sm" >2022 - 2024</span>
-                        </div>
-                    </div>
-                </div>
-                <mat-divider class="border-slate-300" >
-                </mat-divider>
-                <div class="flex gap-2 items-center" >
-                    <div>
-                        <div class="p-2 bg-white rounded-md inline-block" >
-                            <img src="imgs/nivutech.jpg" width="50px" height="50px" alt="Megafact">
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2" >
-                        <div class="text-lg" >
-                            Back-end developer at <span class="font-semibold" >Nivutech</span>
-                        </div>
-                        <div  >
-                            <span class="text-secondary text-sm" >2024 - 2025</span>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-    <div class="flex flex-col flex-1" >
-        <div>
-            <span class="text-4xl font-light" >
-                Lates Work
-            </span>
-        </div>
-        <div class="py-8 flex flex-col gap-4"  >
-                <div class="flex gap-2 items-center" >
-                    <div>
-                        <div class="p-4 bg-white rounded-md inline-block" >
-                           <mat-icon class="text-pink-500 text-3xl" >handshake</mat-icon>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2 flex-1 " >
-                        <div class="text-lg font-semibold text-pink-500 " >
-                            Ṕointree
-                        </div>
-                        <div  >
-                            <div class="flex justify-between w-full" >
-                                <div>
-                                    <span>Back-end developer</span>
-                                </div>
-                                <div   class="flex gap-2" >
-                                    <div class="rounded-full bg-blue-500 text-white px-2 py-1" >
-                                        Quarkus
+                        <div class="flex flex-col gap-2 flex-1 " >
+                            <div class="text-lg font-semibold text-pink-500 " >
+                                Ṕointree
+                            </div>
+                            <div  >
+                                <div class="flex justify-between w-full max-sm:flex-col gap-2" >
+                                    <div>
+                                        <span>Back-end developer</span>
                                     </div>
-
-                                    <div class="rounded-full bg-red-500 text-white px-2 py-1" >
-                                        Angular
+                                    <div   class="flex gap-2 " >
+                                        <div class="rounded-full bg-blue-500 text-white px-2 py-1" >
+                                            Quarkus
+                                        </div>
+    
+                                        <div class="rounded-full bg-red-500 text-white px-2 py-1" >
+                                            Angular
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <mat-divider class="border-slate-300" >
-                </mat-divider>
-                <div class="flex gap-2 items-center" >
-                    <div>
-                        <div class="p-4 bg-white rounded-md inline-block" >
-                           <mat-icon class="text-blue-500 text-3xl" >add_business</mat-icon>
+                    <mat-divider class="border-slate-300" >
+                    </mat-divider>
+                    <div class="flex gap-2 items-center" >
+                        <div>
+                            <div class="p-4 bg-white rounded-md inline-block" >
+                               <mat-icon class="text-blue-500 text-3xl" >add_business</mat-icon>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex flex-col gap-2 flex-1 " >
-                        <div class="text-lg font-semibold text-blue-500 " >
-                            Tuventi
-                        </div>
-                        <div  >
-                            <div class="flex justify-between w-full" >
-                                <div>
-                                    <span>Back-end developer</span>
-                                </div>
-                                <div   class="flex gap-2" >
-                                    <div class="rounded-full bg-green-500 text-white px-2 py-1" >
-                                        Spring boot
+                        <div class="flex flex-col gap-2 flex-1 " >
+                            <div class="text-lg font-semibold text-blue-500 " >
+                                Tuventi
+                            </div>
+                            <div  >
+                                <div class="flex justify-between w-full max-sm:flex-col gap-2 " >
+                                    <div>
+                                        <span>Back-end developer</span>
                                     </div>
-                                    <div class="rounded-full bg-orange-500 text-white px-2 py-1" >
-                                        Mjml
+                                    <div   class="flex gap-2" >
+                                        <div class="rounded-full bg-green-500 text-white px-2 py-1" >
+                                            Spring boot
+                                        </div>
+                                        <div class="rounded-full bg-orange-500 text-white px-2 py-1" >
+                                            Mjml
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        </div>
-    </div>
-</div >
-<div class=" py-20 px-20 flex"    >
-    <div class="flex flex-col gap-4" style="flex: 0 1 50%;" >
-        <div class="text-4xl font-light" >
-            Contact Information
-        </div>
-        <div class="text-secondary text-base" >
-            I'm open to new opportunities, collaborations, or just a friendly chat. Feel free to get in touch and I’ll respond as soon as I can.
-        </div>
-        <div class="flex flex-col gap-6 pt-4" >
-            <div class="flex gap-4 items-center" >
-                <div class="rounded-full p-4 bg-white shadow-sm " >
-                    <mat-icon class="text-blue-600" >call</mat-icon>
-                </div>
-                <div class="flex flex-col gap-2" >
-                    <div class="font-semibold" >Phone</div>
-                    <div class="text-secondary" >+51958766379</div>
-                </div>
             </div>
-            <div class="flex gap-4 items-center" >
-                <div class="rounded-full p-4 bg-white shadow-sm " >
-                    <img src="icon/gmail.svg" width="24px" alt="Gmail">
+        </div>
+    </div >
+    <div class="px-20 grid grid-cols-2 max-sm:px-4 max-sm:grid-cols-1"    >
+        <div class="flex flex-col gap-4  ">
+            <div class="text-4xl font-light" >
+                Contact Information
+            </div>
+            <div class="text-secondary text-base" >
+                I'm open to new opportunities, collaborations, or just a friendly chat. Feel free to get in touch and I’ll respond as soon as I can.
+            </div>
+            <div class="flex flex-col gap-6 pt-4" >
+                <div class="flex gap-4 items-center" >
+                    <div class="rounded-full p-4 bg-white shadow-sm " >
+                        <mat-icon class="text-blue-600" >call</mat-icon>
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <div class="font-semibold" >Phone</div>
+                        <div class="text-secondary" >+51958766379</div>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-2" >
-                    <div class="font-semibold" >Gmail</div>
-                    <div class="text-secondary" >reymerretamozolopez&#64;gmail.com</div>
+                <div class="flex gap-4 items-center" >
+                    <div class="rounded-full p-4 bg-white shadow-sm " >
+                        <img src="icon/gmail.svg" width="24px" alt="Gmail">
+                    </div>
+                    <div class="flex flex-col gap-2" >
+                        <div class="font-semibold" >Gmail</div>
+                        <div class="text-secondary" >reymerretamozolopez&#64;gmail.com</div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
-<div style="min-height: 80vh;" class="flex items-center justify-center">
+<div style="min-height: 80vh;" class="flex items-center justify-center max-sm:flex-col">
     <div class="flex-1" >
         <div class=" max-w-screen-md w-full h-full flex flex-col items-center justify-center ">
             <h3 class="text-xl font-extralight text-center text-secondary">My technical skills </h3>
-            <div class=" grid gap-x-4 gap-y-6 justify-center items-center w-full pt-10 min-h-80 grid-cols-6">
+            <div class=" grid gap-x-4 gap-y-6 justify-center items-center w-full pt-10 min-h-80 grid-cols-6 max-sm:grid-cols-4 max-sm:gap-y-2">
                 @for (item of technologies(); track $index) {
                 <div class="flex justify-center items-center p-2 rounded-lg mx-2  "
                     [ngClass]="view() === item.name ? item.bgColor : ''">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-1 flex justify-center " >
+    <div class="flex-1 flex justify-center mx-2 max-sm:flex-none " >
         @for (technology of technologies(); track $index) {
             <div class="pb-2 rounded-xl max-w-screen-md animation-show  w-full shadow-lg" 
                 [ngClass]="[technology.bgColor ]"  [class.hidden]="view() !== technology.name">

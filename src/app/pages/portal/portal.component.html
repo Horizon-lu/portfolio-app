@@ -1,15 +1,43 @@
 
 <div>
-    <div class="flex justify-between items-center px-20 py-4" >
-        <div>
-            <a routerLink="/" >
-                <img height="40px" src="imgs/logo.png " alt="logo">
-            </a>
+    <div class="px-20 max-sm:px-4 py-4  relative z-30 bg-background "  >
+        <div class="flex justify-between items-center relative" >
+            <div>
+                <a routerLink="/" >
+                    <img height="40px" src="imgs/logo.png " alt="logo">
+                </a>
+            </div>
+            @if (!isMobile()){
+                <div class="flex gap-10 justify-between " >
+                    @for (url of navUrls(); track $index) {
+        
+                        <a  class="text-black no-underline group " [routerLink]="[url.redirect]" routerLinkActive="link-active"  >
+                            <div class="group-hover:text-red-500" >
+                                {{url.label}}
+                            </div>
+                        </a>
+                    }
+                </div>
+            } @else {
+                <div>
+                    <button mat-icon-button (click)="changeStateSinedav(!openNavMobile())" >
+                        <mat-icon>
+                            @if (openNavMobile()){
+                                close
+                            } @else {
+                                menu
+                            }
+                        </mat-icon>
+                    </button>
+                </div>
+            }
         </div>
-        <div class="flex gap-10 justify-between" >
+        
+    </div>
+    <div class="dark_overlay flex justify-center items-center " [class.visible]="openNavMobile()" [class.animation-show]="openNavMobile()"   >
+        <div class="bg- rounded-md flex flex-col gap-4"  >
             @for (url of navUrls(); track $index) {
-
-                <a  class="text-black no-underline group " [routerLink]="[url.redirect]" routerLinkActive="link-active"  >
+                <a  class="text-black no-underline group text-xl " [routerLink]="[url.redirect]"  >
                     <div class="group-hover:text-red-500" >
                         {{url.label}}
                     </div>
@@ -20,7 +48,7 @@
     <div>
         <router-outlet />
     </div>
-    <div class="pt-10 pb-5 px-20  flex flex-col gap-10 "   >
+    <div class="pt-10 pb-5 px-20 max-sm:px-4  flex flex-col gap-10 "   >
         <!--
         <div class="w-full flex items-center justify-center"   >
             <div style="flex: 0 1 600px;" >
@@ -39,13 +67,13 @@
         -->
         <mat-divider class= "border-slate-200 " >
         </mat-divider>
-        <div class="flex justify-between items-center" >
+        <div class="flex justify-between items-center max-sm:flex-col gap-4" >
             <div>&copy; 2025 Horizon - All rigth reserved</div>
             <div class="flex gap-2" >
-                <a >
+                <a  href="https://www.linkedin.com/in/reymer-retamozo-lopez-9a15581a4/" >
                     <img src="icon/linkedin.svg" width="40px"    alt="linkedin">
                 </a>
-                <a >
+                <a href="https://github.com/Lurey2" >
                     <img src="technologies/github.svg" width="40px" alt="Github">
                 </a>
             </div>

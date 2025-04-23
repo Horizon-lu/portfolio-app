@@ -1,0 +1,14 @@
+.dark_overlay {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    height: 100vh;
+    visibility: hidden;
+    -webkit-transition: opacity 0.25sease-in-out, visibility 0.25s;
+    transition: opacity 0.25sease-in-out, visibility 0.25s;
+    @apply bg-background ;
+}
+

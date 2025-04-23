@@ -1,0 +1,29 @@
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    @apply hover:bg-slate-200 duration-300 transition-all ease-in-out ;
+}
+  
+  
+  .contact-method .text .label {
+    font-weight: bold;
+    margin: 0;
+    text-decoration: none;
+  }
+  
+  .contact-method .text .value {
+    margin: 0;
+    color: #555;
+  }
