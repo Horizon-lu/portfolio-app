@@ -1,0 +1,1 @@
+import"./chunk-4CLCTAJ7.js";var r=[{path:"",loadChildren:()=>import("./chunk-ZKYJWDOM.js").then(e=>e.routes)},{path:"me",loadChildren:()=>import("./chunk-I7LYKOTA.js").then(e=>e.routes)},{path:"skills",loadChildren:()=>import("./chunk-XOXTXTQB.js").then(e=>e.routes)},{path:"projects",loadChildren:()=>import("./chunk-ZKUBPWDN.js").then(e=>e.routes)}];export{r as routes};
