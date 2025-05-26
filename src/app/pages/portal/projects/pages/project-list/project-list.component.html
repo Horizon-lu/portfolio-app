@@ -1,0 +1,35 @@
+<div class="w-full flex justify-center">
+  <div class="max-w-screen-lg w-full flex flex-col gap-10">
+    @for (experiencie of experiencies; track experiencie; let i = $index) {
+    <div class="w-full shadow rounded-lg bg-white px-4 py-4">
+      <div>
+        <h2 class="text-lg font-light pt-0 mt-0">Nivutech</h2>
+      </div>
+      <hr />
+      <div class="grid grid-cols-3 gap-2">
+        @for( project of experiencie.projects; track project; let j = $index) {
+        <div  (click)="open(i , j)"
+              class="group cursor-pointer bg-gray-50 rounded-md hover:bg-slate-100 p-4"
+        >
+          <div class="group-hover:scale-105 duration-300 ease-in-out text-center pb-4">
+            <img
+              height="150px"
+              [src]="'experiences/' + project.image[0]"
+              alt=""
+            />
+          </div>
+          <div class="flex flex-col gap-1" >
+            <div class="text-sm">{{project.name}}</div>
+            <div class="text-xs *:block  flex flex-row gap-2 ">
+              @for (technology of project.technologies; track technology) {
+                <span class="px-2 py-1 bg-slate-200 rounded-xl " >{{technology}}</span>
+              }
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</div>

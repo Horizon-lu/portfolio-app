@@ -19,19 +19,23 @@ export class PortalComponent implements AfterViewInit {
   navUrls = signal<{label : string ,redirect : string}[]>([
     {
       label: 'Technical Skills',
-      redirect: '/skills' 
+      redirect: '/skills'
     },
     {
       label: 'About me',
       redirect: '/me'
+    },
+    {
+      label: 'Projects',
+      redirect: '/projects'
     }
   ])
 
   openNavMobile = signal(false);
-  
+
 
   protected readonly isMobile = signal(true);
-  
+
 
   private readonly _mobileQuery: MediaQueryList;
   private readonly _mobileQueryListener: () => void;

@@ -12,5 +12,9 @@ export const routes: Routes = [
     {
         path: 'skills',
         loadChildren: () => import('./skill/skill.routes').then(m => m.routes)
+    },
+    {
+        path: 'projects',
+        loadChildren: () => import('./projects/project.routes').then(m => m.routes)
     }
 ];
