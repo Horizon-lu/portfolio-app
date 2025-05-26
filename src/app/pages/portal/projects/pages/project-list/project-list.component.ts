@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { experiences } from '../../../../../core/data/experiencie';
 import { MatDialog } from '@angular/material/dialog';
+import { experiences } from '../../../../../core/data/experiencie';
 import { ProjectDescriptionDialogComponent } from '../../components/project-description-dialog/project-description-dialog.component';
 
 @Component({
   selector: 'app-project-list',
-  imports: [],
+  imports: [ CommonModule],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.scss'
 })
@@ -22,9 +23,8 @@ export class ProjectListComponent {
         indexCompany: indexCompany,
         indexProject: indexProject
       },
-      width: '80%',
-      maxWidth: '800px',
-      panelClass: 'custom-dialog-container'
+      maxWidth: '1800px',      
+      height: '80%',
     });
   }
 

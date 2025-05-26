@@ -1,7 +1,8 @@
 export const experiences : {
   company: string;
   position: string;
-  date: Date
+  dateInit: Date,
+  dateEnd?: Date,
   projects: {
     name: string;
     description: string;
@@ -11,7 +12,8 @@ export const experiences : {
 }[] = [
   {
     company: 'Megafact',
-    date: new Date('2022-01-01'),
+    dateInit: new Date('2022-01-01'),
+    dateEnd: new Date('2024-01-01'),
     position: 'Full Stack Developer',
     projects: [
       {
@@ -30,7 +32,8 @@ export const experiences : {
   },
   {
       company: 'Nivutech',
-      date: new Date('2024-01-01'),
+      dateInit: new Date('2024-04-01'),
+      dateEnd: new Date('2025-02-01'),
       position: 'Backend Developer',
       projects : [
         {

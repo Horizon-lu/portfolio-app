@@ -1,1 +1,63 @@
-<p>project-description-dialog works!</p>
+<div class="h-full mx-10 px-2 bg-white rounded-lg" >
+    <div class="flex flex-row gap-2 h-full  flex-1" >
+        <div  class=" relative flex items-center justify-center h-full overflow-hidden" >
+            <div class="relative group" >
+                <img  width="100%" [ngClass]="{'animation-show': triggerAnimation()}" (load)="triggerAnimationChange()"  class="duration-300 ease-in-out group-hover:brightness-50" [src]="'experiences/' + project().image[this.imageIndex()]">
+                <button (click)="changeImageIndex(-1)" mat-icon-button color="primary" class="hidden group-hover:block rounded-full absolute left-2 top-1/2 -translate-y-1/2 bg-black "   >
+                    <mat-icon class="text-white" >chevron_left</mat-icon>
+                </button>
+                <button (click)="changeImageIndex(1)" mat-icon-button color="primary" class="hidden group-hover:block rounded-full absolute right-2 top-1/2 -translate-y-1/2 bg-black "  >
+                    <mat-icon class="text-white" >chevron_right</mat-icon>
+                </button>
+            </div>
+            <div  class="absolute bottom-0 left-0 w-full " >
+                <div class="bg-white  flex gap-2 justify-end py-2 w-full " >
+                    @for (item of project().image; track $index) {
+                        <div (click)="imageIndex.set($index)"  class=" cursor-pointer duration-300 ease-in-out h-4 w-4 rounded-lg bg-blue-100" [ngClass]="{'bg-blue-600': $index == imageIndex()}"  ></div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class=" bg-white px-4" style="max-width: 320px;" >
+            
+            <div class="flex flex-col gap-4 h-full" >
+                <h3 class="text-secondary text-base font-light mb-0" >{{experiences[companyIndex()].company}}</h3>
+                <div>
+                    <span class="text-secondary text-xs" >{{projectIndex() +1 }}/{{experiences[companyIndex()].projects.length}}</span>
+                    <div class="relative" >
+                        <div class="absolute h-1.5 progress-bar border-8 rounded-lg bg-blue-100 w-full " >
+                        </div>
+                        <div class="absolute h-1.5 progress-bar border-8 rounded-lg bg-blue-600 duration-300 ease-in-out " [ngStyle]="{'width':  progressPercent() + '%'}" >
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="mt-0 pt-0 text-3xl " >{{project().name}}</h2>
+                    <span class="text-sm text-gray-500" >{{project().description}}</span>
+                </div>
+
+                <div class="flex flex-col gap-2" >
+                    <span class="text-base text-secondary">Technologies:</span>
+                    <div class="flex flex-wrap gap-2">
+                        @for (technology of project().technologies; track technology) {
+                            <span class="text-sm px-2 py-1 bg-slate-200 rounded-xl">{{technology}}</span>
+                        }
+                    </div>
+                </div>
+                <div class="h-full" >
+
+                </div>
+                <div>
+                    <div class="flex justify-between gap-2 py-4">
+                        <button mat-icon-button color="primary" class="rounded-full bg-blue-700"  (click)="changeSelectedProject(-1)" >
+                            <mat-icon class="text-white" >chevron_left</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" class="rounded-full bg-blue-700" (click)="changeSelectedProject(1)" >
+                            <mat-icon class="text-white" >chevron_right</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

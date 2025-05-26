@@ -1,9 +1,12 @@
-<div class="w-full flex justify-center">
+<div class="w-full flex justify-center ">
   <div class="max-w-screen-lg w-full flex flex-col gap-10">
     @for (experiencie of experiencies; track experiencie; let i = $index) {
     <div class="w-full shadow rounded-lg bg-white px-4 py-4">
-      <div>
-        <h2 class="text-lg font-light pt-0 mt-0">Nivutech</h2>
+      <div class="flex justify-between items-baseline" >
+        <h2 class="text-lg font-light pt-0 mt-0 mb-0 ">{{experiencie.company}}</h2>
+        <span class="text-secondary text-sm font-light" > 
+          {{experiencie.dateInit | date: 'YYYY'}} -  {{experiencie.dateEnd | date: 'YYYY'}}
+        </span>
       </div>
       <hr />
       <div class="grid grid-cols-3 gap-2">

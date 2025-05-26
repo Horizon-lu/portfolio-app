@@ -1,8 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use '@angular/material' as mat;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+  @include mat.dialog-overrides((
+    container-color: transparent,
+    container-shape: none
+  ));
+}
 
 html, body { height: 100%; }
 body { margin: 0; padding: 0;  font-family: 'Inter', sans-serif !important; }
@@ -25,6 +34,7 @@ body { margin: 0; padding: 0;  font-family: 'Inter', sans-serif !important; }
     }
 }
   
+//end dialog style
 .animation-show {
 animation: animation-show 0.3s ease-out forwards;
 }
