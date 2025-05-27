@@ -27,7 +27,7 @@
                       <span class="text-sm text-gray-500" >{{project().description}}</span>
                   </div>
 
-                  <div class=" hidden relative max-sm:flex items-center justify-center  overflow-hidden" >
+                  <div class=" hidden relative max-sm:flex items-center justify-center w-full " >
                     <ng-container *ngTemplateOutlet="galery"></ng-container>
                   </div>
 
@@ -62,12 +62,12 @@
 </div>
 
 <ng-template #galery>
-  <div class="relative group w-full text-center " >
-      <img   [ngClass]="{'animation-show': triggerAnimation()}" (load)="triggerAnimationChange()"  class="duration-300 ease-in-out group-hover:brightness-50 max-w-full" [src]="'experiences/' + project().image[this.imageIndex()]">
-      <button (click)="changeImageIndex(-1)" mat-icon-button color="primary" class="hidden group-hover:block rounded-full absolute left-2 top-1/2 -translate-y-1/2 bg-black "   >
+  <div class="relative group w-full text-center pb-10 " >
+      <img   [ngClass]="{'animation-show': triggerAnimation()}" (load)="triggerAnimationChange()"  class="object-cover rounded-md duration-300 ease-in-out group-hover:brightness-50 max-w-full max-sm:w-3/4 max-sm:h-full " [src]="'experiences/' + project().image[this.imageIndex()]">
+      <button (click)="changeImageIndex(-1)" mat-icon-button color="primary" class="hidden group-hover:block rounded-full absolute left-2 top-1/2 -translate-y-1/2 bg-black max-sm:left-0"   >
           <mat-icon class="text-white" >chevron_left</mat-icon>
       </button>
-      <button (click)="changeImageIndex(1)" mat-icon-button color="primary" class="hidden group-hover:block rounded-full absolute right-2 top-1/2 -translate-y-1/2 bg-black "  >
+      <button (click)="changeImageIndex(1)" mat-icon-button color="primary" class="hidden group-hover:block rounded-full absolute right-2 top-1/2 -translate-y-1/2 bg-black max-sm:right-0 "  >
           <mat-icon class="text-white" >chevron_right</mat-icon>
       </button>
   </div>
