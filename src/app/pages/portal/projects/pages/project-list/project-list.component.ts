@@ -23,7 +23,7 @@ export class ProjectListComponent {
         indexCompany: indexCompany,
         indexProject: indexProject
       },
-      maxWidth: '1800px',      
+      maxWidth: '1800px',
       height: '80%',
     });
   }
