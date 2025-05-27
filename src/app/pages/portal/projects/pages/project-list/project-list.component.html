@@ -4,7 +4,7 @@
     <div class="w-full shadow rounded-lg bg-white px-4 py-4">
       <div class="flex justify-between items-baseline" >
         <h2 class="text-lg font-light pt-0 mt-0 mb-0 ">{{experiencie.company}}</h2>
-        <span class="text-secondary text-sm font-light" > 
+        <span class="text-secondary text-sm font-light" >
           {{experiencie.dateInit | date: 'YYYY'}} -  {{experiencie.dateEnd | date: 'YYYY'}}
         </span>
       </div>
@@ -17,13 +17,14 @@
           <div class="group-hover:scale-105 duration-300 ease-in-out text-center pb-4">
             <img
               height="150px"
+              class="max-w-full object-cover rounded-md mb-2"
               [src]="'experiences/' + project.image[0]"
               alt=""
             />
           </div>
           <div class="flex flex-col gap-1" >
             <div class="text-sm">{{project.name}}</div>
-            <div class="text-xs *:block  flex flex-row gap-2 ">
+            <div class="text-xs *:block  flex flex-row flex-wrap gap-2 ">
               @for (technology of project.technologies; track technology) {
                 <span class="px-2 py-1 bg-slate-200 rounded-xl " >{{technology}}</span>
               }
