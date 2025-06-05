@@ -29,6 +29,7 @@ export const experiences : {
           'map-bus-3.png',
           'map-bus-4.png',
           'map-bus-5.png',
+          'map-bus-6.png',
         ]
       }
     ]
