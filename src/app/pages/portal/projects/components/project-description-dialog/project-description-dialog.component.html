@@ -31,7 +31,7 @@
                     <ng-container *ngTemplateOutlet="galery"></ng-container>
                   </div>
 
-                  <div class="flex flex-col gap-2" >
+                  <div class="flex flex-col gap-2 " >
                       <span >Technologies I used:</span>
                       <div class="flex flex-wrap gap-2">
                           @for (technology of project().technologies; track technology) {
@@ -45,6 +45,12 @@
                       <p class="text-sm text-gray-500" >{{project().activity}}</p>
                     </div>
                   </div>
+                  @if(project().link) {
+                    <div class="flex flex-col gap-2" >
+                        <span>Link:</span>
+                        <a class="text-blue-600 hover:underline" [href]="project().link" target="_blank" rel="noopener noreferrer">{{project().link}}</a>
+                    </div>
+                  }
                 </div>
                 <div>
                     <div class="flex justify-between gap-2 py-4">

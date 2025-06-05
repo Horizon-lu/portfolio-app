@@ -7,10 +7,33 @@ export const experiences : {
     name: string;
     activity: string;
     description: string;
+    link?: string;
     technologies: string[];
     image: string[];
   }[]
 }[] = [
+  {
+    company: 'Personal Projects',
+    dateInit: new Date(),
+    position: '',
+    projects: [
+      {
+        name: 'map-bus-ayacucho',
+        activity: 'I started this project from the begining but I haven\'t finished it yet.',
+        link: 'https://app.horizonbusses.com',
+        description: 'This project involves creating a web application to view bus routes in Ayacucho, Peru. The application also provides functionality to find the closest route between two points using the available transport routes.',
+        technologies: [ 'Angular', 'Kubernete', 'Docker', 'Racketspace spot', 'CD/CI', 'pipeline', 'gitlab', 'OSRM', 'keycloak', 'Cloudfare', 'Golang', 'Hexagonal architecture', 'leaflet', 'OpenStreetMap'],
+        image: [
+          'map-bus-1.png',
+          'map-bus-2.png',
+          'map-bus-3.png',
+          'map-bus-4.png',
+          'map-bus-5.png',
+        ]
+      }
+    ]
+  }
+  ,
   {
       company: 'Nivutech',
       dateInit: new Date('2024-04-01'),
